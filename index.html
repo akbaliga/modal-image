@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      #myImg {
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+        margin: 50px auto;
+      }
+
+      #myImg:hover {
+        opacity: 0.7;
+      }
+
+      .modal-container {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        margin: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        display: none;
+        transition: 0.5s ease-in-out;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+      }
+
+      .modal-container img {
+        width: 500px;
+      }
+
+      .modal-container p {
+        color: white;
+        font-size: 18px;
+      }
+
+      #close {
+        color: white;
+        font-size: 18px;
+        margin-left: auto;
+        display: inline-block;
+        height: 30px;
+        cursor: pointer;
+      }
+
+      #modal-img {
+        animation-name: zoom;
+        animation-duration: 0.6s;
+        width: 80%;
+        max-width: 700px;
+      }
+
+      @keyframes zoom {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <img id="myImg" src="./img_snow.jpg" alt="Snow" style="width:300px" />
+
+    <div class="modal-container">
+      <span id="close">X</span>
+      <img id="modal-img" />
+      <p class="caption">Snow</p>
+    </div>
+
+    <script type="text/javascript" src="./src/index.js"></script>
+  </body>
+</html>
